@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+<<<<<<< HEAD
 import { GoogleGenerativeAI } from '@google/generative-ai'
+=======
+>>>>>>> parent of d7375e8 (tests)
 
 @Component({
   selector: 'app-root',
@@ -10,6 +13,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai'
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'TechQuest';
 
    genAI = new GoogleGenerativeAI("AIzaSyBQAC-cjYyQWmX0F1FfzyHrVX9Erhng3ks");
@@ -24,4 +28,7 @@ ngOnInit(): void{
   console.log(this.result);
 }
 
+=======
+  title = 'y';
+>>>>>>> parent of d7375e8 (tests)
 }
