@@ -2,44 +2,61 @@ import { Component } from '@angular/core';
 import { AiService } from '../../services/AI/ai.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgClass } from '@angular/common';
+import { NgFor } from '@angular/common';
+import { range } from 'rxjs';
 
 @Component({
   selector: 'app-mainbody',
   imports: [
     ReactiveFormsModule,
-    NgClass
+    NgFor,
   ],
   templateUrl: './mainbody.component.html',
   styleUrl: './mainbody.component.scss'
 })
 export class MainbodyComponent {
-
   inputForm: any;
   prompt: any;
-  output: any = 'Hello! I am your Eggsistant';
-  state = 'answer';
   
+  data: any = null;
+  name = ""
+  ingredients = []
+ 
+  recipe = {
+    name: '',
+    ingredients: [],
+    description: []
+  }
 
   constructor(
     private formBuilder: FormBuilder,
-    private aiService: AiService
+    private aiService: AiService,
   ) {}
 
   ngOnInit(): void {
     this.inputForm = this.formBuilder.group({
       name: ['', Validators.required],
     });
+    
   }
 
   async submitForm(): Promise<any>
   {
     this.prompt = this.inputForm.value['name'];
 
-    this.aiService.sendPrompt(this.prompt).then(
-      (value) => this.output = value
+    await this.aiService.sendPrompt(this.prompt).then(
+      (value) => this.data = JSON.parse(value)
     );
 
+    this.recipe['name'] = this.data['recipes'][0]['name'];
+    this.recipe['ingredients'] = this.data['recipes'][0]['ingredients'];
+    if(this.data['recipes'][0]['preparation'])
+      this.recipe['description'] = this.data['recipes'][0]['preparation'];
+    else
+      this.recipe['description'] = this.data['recipes'][0]['description'];
+
+
+    console.log(this.recipe);
 
   }
 

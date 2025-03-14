@@ -6,8 +6,8 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
   selector: 'app-root',
   standalone: true,
   imports: [
-    MainbodyComponent,
-    NavbarComponent
+    NavbarComponent,
+    MainbodyComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

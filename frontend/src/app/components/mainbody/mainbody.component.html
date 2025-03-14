@@ -1,11 +1,25 @@
 <div class="output">
-   <div class="answer-container">
-        <div [ngClass]="{'answer': state == 'answer'}">
-            {{output}}
+    <div class="answer-container">
+        <h2 class="recipeTitle">{{recipe.name}}</h2>
+    </div>   
+    <div class="answer-container">
+        <h2 class="titles">List of products</h2>
+        <div class="list-container">
+        <ul *ngFor="let item of recipe.ingredients" class="ingredientsList">
+            <li>{{item}}</li>
+        </ul>
         </div>
-   </div>   
+    </div>
+    <div class="answer-container">
+        <h2 class="titles">How to make</h2>
+        <div class="list-container">
+            <ul *ngFor="let item of recipe.description" class="ingredientsList">
+                <li>{{item}}</li>
+            </ul>
+            </div>
+    </div>    
 </div>
-<div>
+<div class="inputContainer">
     <form [formGroup]="inputForm" (ngSubmit)="submitForm()">
     
         <label class="text" for="name">Ask Your Virtual Assistant</label>
