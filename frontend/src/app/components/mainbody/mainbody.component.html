@@ -1,0 +1,9 @@
+<div>
+    <form [formGroup]="inputForm" (ngSubmit)="submitForm()">
+    
+        <label class="text" for="name">Ask Your Virtual Assistant</label>
+        <input type="text" id="name" formControlName="name">
+        
+        <button type="submit">Submit</button>
+    </form>
+    </div>
