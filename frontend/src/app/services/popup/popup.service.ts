@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PopupComponent } from '../../components/popup/popup.component';
 
 @Injectable({
@@ -7,5 +7,25 @@ import { PopupComponent } from '../../components/popup/popup.component';
 })
 export class PopupService {
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
+  
+
+  openPopup(){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = false;
+    dialogConfig.position = {
+      'left': '65%',
+      'bottom' : '25%'      
+    }
+
+    dialogConfig.width = '400px'
+    dialogConfig.height = '400px'
+
+    this.dialog.open(PopupComponent, dialogConfig);
+  }
+
+
 }

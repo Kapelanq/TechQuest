@@ -1,9 +1,16 @@
+<div class="output">
+   <div class="answer-container">
+        <div [ngClass]="{'answer': state == 'answer'}">
+            {{output}}
+        </div>
+   </div>   
+</div>
 <div>
     <form [formGroup]="inputForm" (ngSubmit)="submitForm()">
     
         <label class="text" for="name">Ask Your Virtual Assistant</label>
         <input type="text" id="name" formControlName="name">
         
-        <button type="submit">Submit</button>
+        <button class="buttonStyle" type="submit">Submit</button>
     </form>
     </div>

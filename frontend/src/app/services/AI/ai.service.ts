@@ -8,14 +8,12 @@ export class AiService {
 
   constructor() { }
 
-  async sendPrompt(x: string)
+  async sendPrompt(prompt: any)
   {
     const genAI = new GoogleGenerativeAI("AIzaSyBQAC-cjYyQWmX0F1FfzyHrVX9Erhng3ks");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   
-    const prompt = "Hello, what is todays date?";
-  
-    const result = await model.generateContent(x);
+    const result = await model.generateContent(prompt);
 
     return result.response.text();
   }
