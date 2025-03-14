@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
