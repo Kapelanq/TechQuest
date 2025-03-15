@@ -23,7 +23,7 @@ export class MainbodyComponent {
   ingredients = []
  
   recipe = {
-    name: '',
+    name: 'Witaj! Tutaj twój osobisty szef kuchni, na co masz dzisiaj ochotę?',
     ingredients: [],
     description: []
   }

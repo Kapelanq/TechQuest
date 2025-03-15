@@ -20,9 +20,11 @@ export class PopupService {
       'left': '65%',
       'bottom' : '25%'      
     }
+  
 
-    dialogConfig.width = '400px'
-    dialogConfig.height = '400px'
+    dialogConfig.width = '1200px';
+    dialogConfig.height = '400px';
+  
 
     this.dialog.open(PopupComponent, dialogConfig);
   }

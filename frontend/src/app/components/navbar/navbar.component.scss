@@ -58,13 +58,17 @@ header{
 }
 
 button{
-    padding: 9px 25px;
+    width: 10%;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    background-color: #4d4238;
     transition: all 0.3 ease 0s;
 }
 
 button:hover {
-    background-color: darkblue;
+    background-color: #42382f;
 }
