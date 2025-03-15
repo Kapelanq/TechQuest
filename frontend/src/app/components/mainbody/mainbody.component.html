@@ -22,9 +22,15 @@
 <div class="inputContainer">
     <form [formGroup]="inputForm" (ngSubmit)="submitForm()">
     
-        <label class="text" for="name">Ask Your Virtual Assistant</label>
+        <label class="text" for="name">Ask Your Chef to cook you something special!</label><br>
         <input type="text" id="name" formControlName="name">
         
         
     </form>
+
+    <div class="character"></div>
+
+    <div class="overlay">
     </div>
+</div>
+

@@ -3,7 +3,7 @@ import { AiService } from '../../services/AI/ai.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
-import { range } from 'rxjs';
+import { HttpService } from '../../services/http/http.service';
 
 @Component({
   selector: 'app-mainbody',
@@ -31,6 +31,7 @@ export class MainbodyComponent {
   constructor(
     private formBuilder: FormBuilder,
     private aiService: AiService,
+    private httpService: HttpService
   ) {}
 
   ngOnInit(): void {
@@ -55,8 +56,6 @@ export class MainbodyComponent {
     else
       this.recipe['description'] = this.data['recipes'][0]['description'];
 
-
-    console.log(this.recipe);
 
   }
 
